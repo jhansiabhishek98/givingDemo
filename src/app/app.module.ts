@@ -6,19 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
-import { AddEventComponent } from './add-event/add-event.component';
-import { UpdateEventComponent } from './update-event/update-event.component';
-import { EventListComponent } from './event-list/event-list.component';
-import { AddStudentComponent } from './add-student/add-student.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AddEventComponent,
-    UpdateEventComponent,
-    EventListComponent,
-    AddStudentComponent
+   
+    
   ],
   imports: [
     BrowserModule,

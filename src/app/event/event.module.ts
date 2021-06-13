@@ -7,10 +7,14 @@ import { EventListComponent } from './event-list/event-list.component';
 import {EventListService} from "./event-list.service"
 import {HttpClientModule} from '@angular/common/http'
 import {ReactiveFormsModule} from "@angular/forms";
+import { EditEventComponent } from './edit-event/edit-event.component';
+import {DeactivateGuard} from "./deactivate.guard"
+import {ResolveGuard} from "./resolve.guard"
 @NgModule({
   declarations: [
     AddEventComponent,
-    EventListComponent
+    EventListComponent,
+    EditEventComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +22,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers:[EventListService]
+  providers:[EventListService,DeactivateGuard,ResolveGuard]
 })
 export class EventModule { }

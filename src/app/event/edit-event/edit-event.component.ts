@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {EventService} from "../event.service";
+import {EventListService} from '../event-list.service'
 import {FormGroup,FormControl,Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 @Component({
-  selector: 'app-update-event',
-  templateUrl: './update-event.component.html',
-  styleUrls: ['./update-event.component.css']
+  selector: 'app-edit-event',
+  templateUrl: './edit-event.component.html',
+  styleUrls: ['./edit-event.component.css']
 })
-export class UpdateEventComponent implements OnInit {
+export class EditEventComponent implements OnInit {
 
-  alert:boolean=false;
-  constructor(private router:ActivatedRoute,private Event:EventService) { }
+  alert:boolean
+  constructor(private router:ActivatedRoute,private Event:EventListService) { }
   add=new FormGroup({
     eventName:new FormControl('',Validators.required),
 })
@@ -37,4 +37,5 @@ export class UpdateEventComponent implements OnInit {
   {
     this.alert=false;
   }
+
 }

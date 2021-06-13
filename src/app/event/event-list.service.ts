@@ -22,6 +22,17 @@ value:string="Event";
       headers:httpheaders,
     };
     return this.http.post<IEvent>(environment.URL+this.value,event,options);
-
-  }
+}
+deleteList(id)
+{
+  return this.http.delete(`${environment.URL+this.value}/${id}`)
+}
+getCurrentList(id)
+{
+  return this.http.get(`${environment.URL+this.value}/${id}`)
+}
+updateList(id,data)
+{
+  return this.http.put(`${environment.URL+this.value}/${id}`,data)
+}
 }

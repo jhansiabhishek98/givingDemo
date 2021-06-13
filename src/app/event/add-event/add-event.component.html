@@ -1,5 +1,5 @@
 <div class="container" >
-    <h3 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Create Event</h3>
+    <h3 style="text-align: center;font-family: Arial, Helvetica, sans-serif;"[ngStyle]="{'color':myValue}">Create Event</h3>
     <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Success</strong> Your data is saved.
         <button (click)="check()" type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -7,11 +7,11 @@
         </button>
       </div>
       <h1>Enter Event Name</h1>
-<form [formGroup]="add" (ngSubmit)="collectInfo()">
+    <form [formGroup]="add" (ngSubmit)="collectInfo()">
     <div class="form-group" >
         <label for="eventName">Event name </label>
         <input type="text" class="form-control col-md-6 col-md-offset-3" formControlName="eventName" placeholder="Enter Event name">
-        
+        <span class="s" *ngIf="add.get('eventName').invalid && add.get('eventName').touched">*Full name is required</span>
 
 </div>
 
